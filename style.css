@@ -1,0 +1,146 @@
+:root {
+    --body-bg-color: #c6d2da;
+    --player-bg-color: white;
+    --txt-color: #365161;
+    --txt-color--light: #2f5a70;
+    --icon-fill: #013555;
+    --slider-track-color: #437ba5;
+  --slider-thumb-color: #1c9ae7;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--body-bg-color);
+}
+
+button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    background-image: none;
+    cursor: pointer;
+}
+
+.music-player {
+    position: relative;
+    z-index: 1;
+    width: 660px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 40px 140px 40px;
+    grid-template-areas:
+        "cover blank"
+        "cover controllers"
+        "slider slider";
+}
+
+.music-player-container {
+    position: relative;
+    width: fit-content;
+    margin: 12px;
+}
+
+.music-player-bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 660px;
+    height: 200px;
+    background-color: var(--player-bg-color);
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.music-player__cover {
+    grid-area: cover;
+}
+
+.music-player__cover>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.music-player__controllers {
+    grid-area: controllers;
+    background-color: #fff;
+    padding: 20 0 0 20px;
+
+}
+
+.music-player__slider {
+    grid-area: slider;
+    background-color: #fff;
+    align-self: center;
+}
+
+.txt {
+    font-size: 14px;
+    color: #999;
+    font-weight: 500;
+}
+
+.track-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 14px 0;
+}
+
+.track-title,
+.track-duration {
+    color: var(--txt-color);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.track-artist,
+.track-time {
+    color: var(--txt-color--light);
+    font-size: 14px;
+    font-weight: 500;
+}
+.controllers-btns{
+    display: flex;
+    gap:8px;
+    justify-content: center;
+
+}
+.controller-btn{
+    padding: 4px;
+}
+.controller-btn >svg {
+    fill:var(--icon-fill);
+    width:32px;
+    height: 32px;
+
+}
+.slider__track{
+    position: relative;
+    width:100%;
+    height: 4px;
+    background-color: var(--slider-track-color);
+    margin-top: 24px;
+}
+.slider__thumb{
+    top: 50%;
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--slider-thumb-color);
+    transform: translate(0%,-50%);
+    cursor: pointer;
+
+}
